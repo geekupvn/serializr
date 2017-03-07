@@ -997,6 +997,7 @@
                     return ar.map(propSchema.serializer)
                 },
                 deserializer: function(jsonArray, done, context) {
+                    jsonArray = jsonArray || []
                     if (!Array.isArray(jsonArray))
                         return void done("[serializr] expected JSON array")
                     parallel(
